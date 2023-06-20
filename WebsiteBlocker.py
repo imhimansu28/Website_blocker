@@ -13,16 +13,14 @@ while True:
         with open(hosts_paths, 'r+') as file:
             content = file.read()
             for website in website_list:
-                if website in content:
-                    pass
-                else:
-                    file.write(redirect+" "+website+"\n")
+                if website not in content:
+                    file.write(f"{redirect} {website}" + "\n")
     else:
         with open(hosts_paths, 'r+') as file:
             content = file.readline()
             file.seek(0)
             for line in content:
-                if not any(website in line for website in website_list):
+                if all(website not in line for website in website_list):
                     file.write(line)
             file.truncate()
         print("Fun hours...")
