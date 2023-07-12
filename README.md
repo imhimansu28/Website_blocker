@@ -1,4 +1,4 @@
-Website Blocker Script
+# Website Blocker Script
 
 This Python script allows you to block access to specific websites on your local computer running Windows. It works by modifying the `hosts` file on the computer to redirect any requests to the blocked websites to the local IP address.
 
